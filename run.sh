@@ -11,5 +11,6 @@ cd ..
 sudo singularity build salmon/salmon.sif salmon/salmon.def
 
 singularity exec -i --cleanenv -B .:/data salmon/salmon.sif /usr/local/salmon/bin/salmon index  -i /data/salmon_demo_work/athal_index -t /data/salmon_demo_work/Arabidopsis_thaliana.TAIR10.28.cdna.all.fa.gz -p 4
+singularity exec -i --cleanenv -B .:/data salmon/salmon.sif /usr/local/salmon/bin/salmon quant  -i /data/salmon_demo_work/athal_index --libType A --mates1 /data/salmon_demo_work/DRR016125_1.fastq  --mates2 /data/salmon_demo_work/DRR016125_2.fastq  -o /data/salmon_demo_work/DRR016125_quant -p 4
 
 
